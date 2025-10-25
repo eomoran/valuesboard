@@ -8,8 +8,9 @@ No build step, no backend, no tracking.
 ## How to Run
 
 1. Clone or copy this repository.
-2. Open `index.html` in a modern browser (Chrome, Safari, Firefox, Edge).  
-   You don't need a server.
+2. Run `python3 -m http.server 8000` in the folder containing this repo.
+3. Open 'http://localhost:8000' in a modern browser (Chrome, Safari, Firefox, Edge).  
+
 
 That's it.
 
