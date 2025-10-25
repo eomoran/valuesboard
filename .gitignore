@@ -1,0 +1,19 @@
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary exports (if you ever save inside repo)
+*.txt
+*.csv
+
+# Node / build (future-proof)
+node_modules/
+dist/
+build/
+
+# Backup or autosave files
+*~
+*.swp
+*.bak
