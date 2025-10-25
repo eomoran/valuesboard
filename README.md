@@ -1,156 +1,158 @@
-Personal Values Board
+# Personal Values Board
 
-A fast, keyboard-driven values sorting tool you can run locally in your browser.
+A fast, keyboard-driven values sorting tool you can run locally in your browser.  
 No build step, no backend, no tracking.
 
-⸻
+---
 
-How to run
-	1.	Clone / copy this repo.
-	2.	Open index.html in a modern browser (Chrome, Safari, Firefox, Edge).
-You don’t need a server.
+## How to Run
 
-That’s it.
+1. Clone or copy this repository.
+2. Open `index.html` in a modern browser (Chrome, Safari, Firefox, Edge).  
+   You don't need a server.
 
-⸻
+That's it.
 
-What this does
+---
 
-You start with a deck of personal values (ACCEPTANCE, GROWTH, HEALTH, etc.).
+## What This Does
+
+You start with a deck of personal values (e.g., ACCEPTANCE, GROWTH, HEALTH).  
 You classify each card into one of five lanes:
-	•	Core / Non-negotiable
-	•	Important
-	•	Nice to have
-	•	Not important
-	•	Unsorted
+
+- **Core / Non-negotiable**  
+- **Important**  
+- **Nice to have**  
+- **Not important**  
+- **Unsorted**  
 
 You can reorder inside each lane to express priority.
 
-You can export that setup (as .txt or .csv) and later import it to continue refining.
+You can export that setup (as `.txt` or `.csv`) and later import it to continue refining.
 
 This is useful for reflection, coaching, therapy prep, performance reviews, relationship talks, etc.
 
-⸻
+---
 
-Keyboard controls
+## Keyboard Controls
 
-Navigation
-	•	j = move selection down within the current lane
-	•	k = move selection up within the current lane
+### Navigation
+- `j` — Move selection **down** within the current lane.
+- `k` — Move selection **up** within the current lane.
 
-Classify card (send it away, STAY here, auto-advance)
-	•	c = send to Core
-	•	i = send to Important
-	•	n = send to Nice to have
-	•	x = send to Not important
-	•	u = send to Unsorted
+### Classify Card (Send and Stay)
+- `c` — Send to **Core**.
+- `i` — Send to **Important**.
+- `n` — Send to **Nice to Have**.
+- `x` — Send to **Not Important**.
+- `u` — Send to **Unsorted**.
 
-After sending, you keep working in the same lane, and the next card becomes active.
-This is “inbox triage” style.
+After sending, you remain in the same lane, and the next card becomes active — an **inbox triage** style.
 
-Jump focus (UPPERCASE, no card move)
-	•	C = jump focus to Core
-	•	I = jump focus to Important
-	•	N = jump focus to Nice
-	•	X = jump focus to Not important
-	•	U = jump focus to Unsorted
+### Jump Focus (Uppercase, No Card Move)
+- `C` — Jump focus to **Core**.
+- `I` — Jump focus to **Important**.
+- `N` — Jump focus to **Nice**.
+- `X` — Jump focus to **Not Important**.
+- `U` — Jump focus to **Unsorted**.
 
-This is “now I want to groom this lane.”
+### Send to Neighbor Lane
+- `h` — Send card one lane **left**, stay here.
+- `l` — Send card one lane **right**, stay here.
+- `H` — Send card one lane **left** and **follow** it.
+- `L` — Send card one lane **right** and **follow** it.
 
-Send to neighbor lane
-	•	h = send card one lane to the LEFT, stay here
-	•	l = send card one lane to the RIGHT, stay here
-	•	H = send card one lane LEFT and FOLLOW it (selection moves with it)
-	•	L = send card one lane RIGHT and FOLLOW it
+> Lowercase = send (stay). Uppercase = move (follow).
 
-So lowercase is “toss it over, keep working here,” uppercase is “move me with it.”
+### Reorder Within the Focused Lane
+- `J` — Move card **down** one slot.
+- `K` — Move card **up** one slot.
+- `g` — Send card to the **top** of the lane.
+- `G` — Send card to the **bottom** of the lane.
 
-Reorder within the focused lane
-	•	J (Shift+j) = move this card down one slot
-	•	K (Shift+k) = move this card up one slot
-	•	g = send this card to the top of this lane
-	•	G (Shift+g) = send this card to the bottom
+### Other
+- `r` — Shuffle the **Unsorted** lane.
+- `e` — Preview export in the UI and copy to clipboard.
 
-This is for ranking inside a lane, especially Core.
+---
 
-Other
-	•	r = shuffle the Unsorted lane
-	•	e = preview an export in the UI and copy it to clipboard
+## Mouse Support
 
-⸻
+- You can still **drag and drop** cards between lanes.
+- When you drop a card in a new lane, focus follows it automatically.
 
-Mouse support
-	•	You can still drag and drop cards between lanes.
-	•	When you drop a card in a new lane, focus will follow it to that lane.
+---
 
-⸻
+## Export / Import
 
-Export / Import
+### Export `.txt`
+Generates a human-readable summary grouped by lane.  
+Each lane’s order (1., 2., 3., etc.) is preserved.  
+Downloads as `values_export_YYYYMMDD.txt`.
 
-Export .txt
+### Export `.csv`
+Generates machine-friendly rows:
 
-Generates a human-readable summary grouped by lane.
-The 1., 2., 3. order in each lane is preserved.
-Downloads as values_export_YYYYMMDD.txt.
-
-Export .csv
-
-Generates machine-friendly rows like:
-
+```csv
 lane,rank,name,description
 core,1,HONESTY,to be honest and truthful
 important,1,GROWTH,to keep changing and growing
-...
+```
 
-Downloads as values_export_YYYYMMDD.csv.
+Downloads as `values_export_YYYYMMDD.csv`.
 
 The CSV format is also what you can import.
 
-Import .csv
-	•	Click “Import .csv”, choose a CSV you exported earlier.
-	•	The board will be restored:
-	•	Cards go back to their lanes.
-	•	Order inside lanes is restored based on rank.
-	•	Selection will start at Unsorted (or the first non-empty lane).
+### Import `.csv`
+1. Click **Import .csv** and choose a file you previously exported.
+2. The board will be restored:
+   - Cards return to their lanes.
+   - Order inside lanes is preserved by `rank`.
+   - Selection starts at **Unsorted** (or the first non-empty lane).
 
 This means you can:
-	•	Work for a while.
-	•	Export.
-	•	Come back later, re-import, keep refining.
+- Work for a while.
+- Export.
+- Come back later and re-import to continue refining.
 
-⸻
+---
 
-File layout
-	•	index.html – markup and app container
-	•	css/style.css – dark theme + layout
-	•	data/values.js – the values list, lane config, lane order
-	•	js/state.js – app state and logic (selection, moving cards, reordering, etc.)
-	•	js/render.js – DOM rendering + highlighting
-	•	js/keyboard.js – all keyboard bindings
-	•	js/dragdrop.js – drag-and-drop behavior
-	•	js/export_import.js – export (.txt/.csv), preview, import (.csv)
-	•	js/main.js – bootstraps everything, wires buttons
+## File Layout
 
-⸻
+```
+index.html          # Markup and app container
+css/style.css       # Dark theme and layout
+data/values.js      # The values list, lane config, and order
+js/state.js         # App state and logic (selection, moving cards, etc.)
+js/render.js        # DOM rendering and highlighting
+js/keyboard.js      # Keyboard bindings
+js/dragdrop.js      # Drag-and-drop behavior
+js/export_import.js # Export (.txt/.csv), preview, import (.csv)
+js/main.js          # Bootstraps everything, wires buttons
+```
 
-No build step
+---
 
-All JS is native ES modules.
+## No Build Step
 
-The browser loads js/main.js with type="module", and that file imports the other modules.
-You can just open index.html directly, or serve the folder with any static server.
+All JavaScript uses **native ES modules**.  
 
-⸻
+The browser loads `js/main.js` with `type="module"`, which imports all other modules.  
+You can open `index.html` directly or serve the folder with any static server.
 
-Roadmap ideas
-	•	localStorage autosave (so you don’t have to manually export/import between sessions)
-	•	ability to add your own custom cards
-	•	ability to rename/recolor lanes from the UI
-	•	per-lane notes / reflections (why is this Core for me right now?)
+---
 
-⸻
+## Roadmap Ideas
 
-License / Use
+- Add **localStorage autosave** (avoid manual export/import).
+- Add ability to **create custom cards**.
+- Allow **renaming or recoloring lanes**.
+- Add **lane notes** (why this is Core right now).
 
-You can use this personally, with clients, or in workshops.
+---
+
+## License / Use
+
+You can use this personally, with clients, or in workshops.  
 If you publish it, credit is appreciated but not required.
+
