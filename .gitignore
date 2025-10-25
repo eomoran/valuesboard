@@ -17,3 +17,7 @@ build/
 *~
 *.swp
 *.bak
+# Ignore R artifacts
+.Rhistory
+.RData
+.Rproj.user/
