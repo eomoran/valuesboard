@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Personal Values Board</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="intro">
+      <h1>Personal Values Board</h1>
+      <p>
+        Keyboard flow:
+        <strong>j/k</strong> select ↓/↑,
+        <strong>c i n x u</strong> send card to Core / Important / Nice / Not / Unsorted (stay here, auto-advance),
+        <strong>C I N X U</strong> jump focus to that column,
+        <strong>h/l</strong> send card one column ←/→ (stay),
+        <strong>H/L</strong> send card one column ←/→ and follow it,
+        <strong>J/K</strong> reorder in lane,
+        <strong>g/G</strong> top/bottom,
+        <strong>r</strong> shuffle Unsorted,
+        <strong>e</strong> preview export,
+        <strong>Export .txt / .csv</strong> to download,
+        <strong>Import .csv</strong> to reload.
+      </p>
+      <div class="kbd-hint">
+        Lowercase = send the card (classification mode). Uppercase = move your focus (navigation mode).  
+        Drag-and-drop with mouse still works.
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="primary" id="exportTxtBtn">Export .txt</button>
+      <button class="primary" id="exportCsvBtn">Export .csv</button>
+      <button id="importBtn">Import .csv</button>
+      <button id="exportBtn">Preview (e)</button>
+      <button id="shuffleBtn">Shuffle Unsorted (r)</button>
+      <button id="clearBtn">Reset Board</button>
+
+      <!-- hidden file input for import -->
+      <input type="file" id="importFileInput" accept=".csv" style="display:none" />
+    </div>
+  </header>
+
+  <div class="board-wrapper">
+    <section class="board" id="board"></section>
+  </div>
+
+  <pre class="export-box" id="exportBox"></pre>
+
+  <!-- App entrypoint -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
